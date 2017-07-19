@@ -1,11 +1,13 @@
 module.exports = function (array, commands) {
 
-    if(commands < 0 || commands > array.length - 1){
-        return `Error: invalid index ${commands}`;
-    }else if(typeof commands !== 'number'){
-       return `Error: Token should be number`;
+    if (commands[0] < 0 || commands[0] > array.length - 1) {
+        return `Error: invalid index ${commands[0]}`;
+    }
+    if (commands.length === 0 || commands.length > 1) {
+        return 'Error: invalid command parameters';
     }
 
-    array.splice(commands, 1);
+    array.splice(commands[0], 1);
     return true
+
 };

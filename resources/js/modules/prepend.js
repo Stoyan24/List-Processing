@@ -1,6 +1,6 @@
 module.exports = function (array, commands) {
 
-    if (commands.length <= 0) {
+    if (commands.length === 0 || commands.length > 1) {
         return 'Error: invalid command parameters';
     }
 
