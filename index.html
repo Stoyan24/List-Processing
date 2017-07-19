@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>List Processing</title>
-  <link rel="stylesheet" href="resourses/css/bootstrap.min.css">
-  <script src="resourses/js/jquery-3.1.1.min.js"></script>
-  <script src="resourses/js/bootstrap.min.js"></script>
-  <script src="resourses/js/main.js"></script>
-
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  
+  <script src="resources/js/jquery-3.1.1.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script>
+    System.config({meta: {format: 'cjs'}});
+    System.import('resources/js/app.js')
+  </script>
+  
+  
+  
 </head>
 <body>
 <main class="container">
