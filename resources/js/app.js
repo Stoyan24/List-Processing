@@ -1,4 +1,4 @@
-let command = require('resources/js/modules/commandManager.js');
+let commandManager = require('resources/js/modules/commandManager.js');
 $().ready(initializeListProcessor);
 
 function initializeListProcessor() {
@@ -29,31 +29,38 @@ function initializeListProcessor() {
 
     switch (commandLineTokens.shift()){
       case 'append' :
-        execCommand(command.append,stringList,commandLineTokens);
+        execCommand(commandManager.append,stringList,commandLineTokens);
         break;
       case 'prepend' :
-        execCommand(command.prepend,stringList,commandLineTokens);
+        execCommand(commandManager.prepend,stringList,commandLineTokens);
         break;
       case 'reverse' :
-        execCommand(command.reverse,stringList,commandLineTokens);
+        execCommand(commandManager.reverse,stringList,commandLineTokens);
         break;
       case 'insert' :
-        execCommand(command.insert,stringList,commandLineTokens);
+        execCommand(commandManager.insert,stringList,commandLineTokens);
         break;
       case 'delete' :
-        execCommand(command.deleteItem,stringList,commandLineTokens);
+        execCommand(commandManager.deleteItem,stringList,commandLineTokens);
         break;
       case 'roll' :
-        execCommand(command.roll,stringList,commandLineTokens);
+        execCommand(commandManager.roll,stringList,commandLineTokens);
         break;
       case 'sort' :
-        execCommand(command.sort,stringList,commandLineTokens);
+        execCommand(commandManager.sort,stringList,commandLineTokens);
         break;
       case 'count' :
-        execCommand(command.count,stringList,commandLineTokens);
+        execCommand(commandManager.count,stringList,commandLineTokens);
         break;
       case 'end' :
-        display(stringList.join(', '));
+        if (commandLineTokens.length > 0) {
+          display('Error: invalid command parameters');
+          return;
+        }
+        display('Finished');
+        commandLine.attr('placeholder', 'Command Line Disabled.. Please restart!');
+        commandLine.attr('disabled','disabled');
+        commandLine = '';// drop the input so it will not get any new commands
         break;
       default:
         display('Error: invalid command.');
@@ -81,7 +88,6 @@ function display(data) {
   else {
     result = displayBox.val() +'\n' + data;
   }
-
   displayBox.val(result);
 }
 
