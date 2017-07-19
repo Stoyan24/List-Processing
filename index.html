@@ -7,7 +7,7 @@
   
   <script src="resources/js/jquery-3.1.1.min.js"></script>
   <script src="resources/js/bootstrap.min.js"></script>
-  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script src="resources/js/systemjs/system.js"></script>
   <script>
     System.config({meta: {format: 'cjs'}});
     System.import('resources/js/app.js')
@@ -31,7 +31,7 @@
                   id="resultDisplay"
                   disabled="disabled"
                   style="resize: none;"
-                  placeholder=""
+                  placeholder="Loading..."
               ></textarea>
             </div>
           </div>
@@ -41,7 +41,7 @@
                   type="text"
                   class="form-control"
                   id="commandLine"
-                  placeholder="Insert command"
+                  placeholder="Program not initialized!!"
               >
               <span class="input-group-btn">
                 <button id="submit" type="submit" class="btn btn-default" >&crarr;</button>

@@ -7,6 +7,8 @@ function initializeListProcessor() {
 
   // catch elements
   let commandLine = $('#commandLine');
+  //clearing the display port
+  $('#resultDisplay').attr('placeholder', '');
 
   //attach event listeners
   $('#submit').click(handleUserSubmit);
