@@ -4,15 +4,13 @@ module.exports = function (array,commands) {
         return 'Error: invalid command parameters';
     }
 
-    let command = '' + commands;
-
-    if(command ==='right'){
+    if(commands[0] ==='right'){
 
         let lastString = array.pop();
         array.unshift(lastString);
     }
 
-    if(command === 'left'){
+    if(commands[0] === 'left'){
         let firstString = array.shift();
         array.push(firstString);
     }
