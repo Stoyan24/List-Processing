@@ -1,13 +1,18 @@
 module.exports = function (array, commands) {
 
-    if (commands[0] < 0 || commands[0] > array.length - 1) {
-        return `Error: invalid index ${commands[0]}`;
-    }
-    if (commands.length === 0 || commands.length > 1) {
+    let tokens = commands.map(el => Number(el));
+
+    if (tokens.length === 0 || tokens.length > 1) {
         return 'Error: invalid command parameters';
     }
-
-    array.splice(commands[0], 1);
+    if (tokens[0] < 0 || tokens[0] > array.length - 1) {
+        return `Error: invalid index ${tokens[0]}`;
+    }
+    if(isNaN(tokens)){
+        return 'Error: invalid command parameter';
+    }
+    
+    array.splice(tokens[0], 1);
     return true
 
 };
