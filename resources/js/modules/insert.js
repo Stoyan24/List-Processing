@@ -8,9 +8,8 @@ module.exports = function (array,commands) {
 
     let str = commands[1];
 
-
-    if(index < 0 || !Number.isInteger(index)){
-        return `Error: invalid index ${index}`;
+    if(index < 0 || index > commands.length || !Number.isInteger(index)){
+        return `Error: invalid index ${commands[0]}`;
     }
 
     array.splice(index, 0, str);
