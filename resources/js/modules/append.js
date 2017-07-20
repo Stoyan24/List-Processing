@@ -4,6 +4,6 @@ module.exports = function (array, tokens) {
         return 'Error: invalid command parameters';
     }
 
-    array.push(tokens);
+    array.push(tokens[0]);
     return true
 };
