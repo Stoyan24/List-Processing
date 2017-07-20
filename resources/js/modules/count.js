@@ -3,12 +3,12 @@ module.exports = function (array,commands) {
       return 'Error: invalid command parameters';
     }
 
-    let count = 0;
+    let stringsCount = 0;
     for (let string of array) {
         if (commands[0] === string){
-          count++;
+            stringsCount++;
         }
     }
 
-    return count;
+    return stringsCount;
 };
