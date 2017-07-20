@@ -70,8 +70,9 @@ function initializeListProcessor() {
 
   function execCommand(func, array, commandLineTokens) {
     let result = func(array,commandLineTokens);
+
     if (result === true) {
-      display(array.join(', '));
+      display(array.join(', '))
     }
     else {
       display(result);
