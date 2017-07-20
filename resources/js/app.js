@@ -70,7 +70,10 @@ function initializeListProcessor() {
 
   function execCommand(func, array, commandLineTokens) {
     let result = func(array,commandLineTokens);
-    if (result === true) {
+    if(Number.isInteger(result)){
+      display(result);
+    }
+    else if (result === true) {
       display(array.join(', '))
     }
     else {
